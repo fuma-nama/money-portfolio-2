@@ -15,7 +15,7 @@ export function DiscordDashboard() {
     <Box css={{ 
            position: "relative", 
            mt: "$sm",
-           '@xs': { mt: "$xl" }, 
+           '@xs': { mt: "$2xl" }, 
            '@sm': { mt: "$5xl" }
     }}>
       <Img
