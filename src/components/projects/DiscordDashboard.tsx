@@ -1,13 +1,14 @@
-import { Button, Card, Text } from "@nextui-org/react";
+import { Button, Card, Link, Text } from "@nextui-org/react";
 import { Box, Flex, HStack } from "../Box";
 import BotDashboardEn from "@assets/bot-dashboard-en.png";
 import BotDashboardCn from "@assets/bot-dashboard-cn.png";
 import { SiGoland, SiKotlin, SiPostgresql } from "react-icons/si";
 import { Img } from "../Img";
-import { FaGithub } from "react-icons/fa";
+import { FaBoxOpen, FaGithub } from "react-icons/fa";
 import { Grid as FGrid } from "../Box";
 import { LightDarkTheme } from "./LightDarkTheme";
 import ChatAppGradient from "@assets/chat-app-gradient.svg";
+import { links } from "../../links";
 
 export function DiscordDashboard() {
   return (
@@ -37,9 +38,19 @@ function Content() {
       <Text h4 color="$textSecondary">
         Flexible, Modern Style UI with Fast performance and Perfect UX
       </Text>
-      <Button flat icon={<FaGithub />} size="lg">
-        Github
-      </Button>
+      <HStack>
+        <Link href={links.botDashboardDemo} target="_blank">
+          <Button flat icon={<FaBoxOpen />} size="lg">
+            Demo
+          </Button>
+        </Link>
+        <Link href={links.botDashboardGithub} target="_blank">
+          <Button flat color="secondary" icon={<FaGithub />} size="lg">
+            Github
+          </Button>
+        </Link>
+      </HStack>
+
       <Box
         css={{
           display: "flex",

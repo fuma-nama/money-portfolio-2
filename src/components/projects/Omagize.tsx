@@ -10,6 +10,7 @@ import { BsCheckCircleFill, BsEyeFill, BsFlower3 } from "react-icons/bs";
 import { As } from "@nextui-org/react/types/utils/system";
 import { updown } from "../transitions";
 import ChatAppGradient from "@assets/chat-app-gradient.svg";
+import { links } from "../../links";
 
 export function Omagize() {
   return (
@@ -64,6 +65,7 @@ function Intro() {
         color="secondary"
         icon={<BsEyeFill />}
         css={{ mt: "$lg" }}
+        onClick={() => window.open(links.omagize, "_blank")}
       >
         Take a Look
       </Button>

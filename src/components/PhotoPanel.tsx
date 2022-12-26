@@ -6,15 +6,12 @@ import {
   Button,
   Image,
   Text,
-  keyframes,
 } from "@nextui-org/react";
-import { useColorMode } from "../utils/theme";
 import Me from "../assets/me.jpg";
 import { updown } from "./transitions";
+import { links } from "../links";
 
 export function PhotoPanel() {
-  const { isDark } = useColorMode();
-
   return (
     <Container
       display="flex"
@@ -47,33 +44,41 @@ export function PhotoPanel() {
           Hello World
         </Button>
       </Tooltip>
-      <Card
-        variant="bordered"
+      <Discord />
+    </Container>
+  );
+}
+
+function Discord() {
+  return (
+    <Card
+      isPressable
+      onClick={() => window.open(links.discord, "_blank")}
+      variant="bordered"
+      css={{
+        animation: `${updown} 4s infinite`,
+        position: "absolute",
+        right: "$3xl",
+        bottom: "$2xl",
+        w: "$5xl",
+        shadow: "$lg",
+        backdropFilter: "blur(16px)",
+        background: "$backgroundAlpha",
+      }}
+    >
+      <Card.Header
         css={{
-          animation: `${updown} 4s infinite`,
-          position: "absolute",
-          right: "$3xl",
-          bottom: "$2xl",
-          w: "$5xl",
-          shadow: "$lg",
-          backdropFilter: "blur(16px)",
-          background: "$backgroundAlpha",
+          gap: "$3",
         }}
       >
-        <Card.Header
-          css={{
-            gap: "$3",
-          }}
-        >
-          <Avatar src={Me} />
-          <Text b size="$lg">
-            Money
-          </Text>
-        </Card.Header>
-        <Card.Body css={{ pt: 0 }}>
-          <Text color="$accents9">Welcome to talk to me in Discord!</Text>
-        </Card.Body>
-      </Card>
-    </Container>
+        <Avatar src={Me} />
+        <Text b size="$lg">
+          Money
+        </Text>
+      </Card.Header>
+      <Card.Body css={{ pt: 0 }}>
+        <Text color="$accents9">Welcome to talk to me in Discord!</Text>
+      </Card.Body>
+    </Card>
   );
 }

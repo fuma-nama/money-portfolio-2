@@ -1,9 +1,10 @@
 import { Button, Card, Grid, Text } from "@nextui-org/react";
 import { BsMenuButtonFill } from "react-icons/bs";
 import { FaDiscord } from "react-icons/fa";
-import { Box, Center, Flex, GlassCard, HStack } from "../Box";
+import { Center, Flex, GlassCard, HStack } from "../Box";
 import FrameworksBg from "@assets/frameworks-bg.svg";
 import { Img } from "../Img";
+import { links } from "../../links";
 
 export function Frameworks() {
   return (
@@ -59,18 +60,20 @@ function Projects() {
       name: "JDAK",
       description: "Next-gen Discord bot Framework for Kotlin",
       icon: FaDiscord,
+      url: links.jdak,
     },
     {
       name: "Discord UI",
       description: "Create Reactive Messages & UX on Discord Bot",
       icon: BsMenuButtonFill,
+      url: links.discordUI,
     },
   ];
 
   return (
     <Grid.Container gap={2} justify="center" css={{ mt: "$12" }}>
-      {projects.map((project) => (
-        <Grid sm css={{ w: "100%" }}>
+      {projects.map((project, i) => (
+        <Grid key={i} sm css={{ w: "100%" }}>
           <GlassCard variant="bordered">
             <Card.Header as={HStack} css={{ gap: "$4" }}>
               <Center
@@ -89,7 +92,11 @@ function Projects() {
               <Text color="$accents8">{project.description}</Text>
             </Card.Body>
             <Card.Footer>
-              <Button size="sm" shadow>
+              <Button
+                size="sm"
+                shadow
+                onClick={() => window.open(project.url, "_blank")}
+              >
                 Open
               </Button>
             </Card.Footer>
@@ -108,7 +115,12 @@ function Projects() {
             <Text color="$accents8">Interested about Other Projects?</Text>
           </Card.Body>
           <Card.Footer>
-            <Button size="sm" flat css={{ w: "100%" }}>
+            <Button
+              size="sm"
+              flat
+              css={{ w: "100%" }}
+              onClick={() => window.open(links.github, "_blank")}
+            >
               My Github
             </Button>
           </Card.Footer>

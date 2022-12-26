@@ -6,7 +6,7 @@ import { FiPhoneCall } from "react-icons/fi";
 export function AppNavbar() {
   const { isDark, setTheme } = useColorMode();
   return (
-    <Navbar isBordered variant="sticky">
+    <Navbar isBordered variant="sticky" css={{ zIndex: "$10" }}>
       <Navbar.Brand>
         <Text b size="$lg">
           Money

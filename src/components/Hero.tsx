@@ -1,9 +1,10 @@
-import { Button, Grid, Row, Text } from "@nextui-org/react";
+import { Button, Grid, Link, Row, Text } from "@nextui-org/react";
 import Gradient from "../assets/banner-gradient.svg";
 import { BsGithub } from "react-icons/bs";
 import { Box } from "./Box";
 import { PhotoPanel } from "./PhotoPanel";
 import { Img } from "./Img";
+import { links } from "../links";
 
 export function Banner() {
   return (
@@ -61,20 +62,19 @@ function Main() {
       >
         Hi! I am Money, a Full-Stack Engineer with Many years of experience
       </Text>
-      <Row>
-        <Button
-          size="lg"
-          auto
-          shadow
-          icon={<BsGithub width={30} height={30} />}
-          color="gradient"
-          css={{
-            mt: "$10",
-          }}
-        >
-          Github
-        </Button>
-      </Row>
+      <Button
+        size="lg"
+        auto
+        shadow
+        icon={<BsGithub width={30} height={30} />}
+        onClick={() => window.open(links.github, "_blank")}
+        color="gradient"
+        css={{
+          mt: "$10",
+        }}
+      >
+        Github
+      </Button>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { Button, Card, Code, Container, Link, Text } from "@nextui-org/react";
 import { FaDiscord, FaGithub } from "react-icons/fa";
+import { links } from "../links";
 import { darkTheme } from "../main";
 import { Box, Center, GlassCard, Grid } from "./Box";
 
@@ -21,7 +22,8 @@ export function Contact() {
         },
       }}
     >
-      <Container lg>
+      <BottomLight />
+      <Container lg css={{ position: "relative" }}>
         <Grid
           css={{
             gap: "$xl",
@@ -36,18 +38,9 @@ export function Contact() {
           }}
         >
           <Content />
-          <GlassCard isHoverable variant="bordered">
-            <Card.Body as={Center}>
-              <Text as={FaGithub} size="$7xl" />
-              <Text h2>Github</Text>
-              <Link href="https://github.com/SonMooSans" target="_blank">
-                <Code>https://github.com/SonMooSans</Code>
-              </Link>
-            </Card.Body>
-          </GlassCard>
+          <Github />
         </Grid>
       </Container>
-      <BottomLight />
     </Box>
   );
 }
@@ -68,7 +61,7 @@ function Content() {
         </Text>
       </Text>
 
-      <Text h4 color="$accents8">
+      <Text h4 color="$accents7">
         Feel free to talk to me on Discord!
       </Text>
       <Button
@@ -77,10 +70,25 @@ function Content() {
         color="secondary"
         size="lg"
         css={{ mt: "$xl" }}
+        onClick={() => window.open(links.discord, "_blank")}
       >
         Join Server
       </Button>
     </Box>
+  );
+}
+
+function Github() {
+  return (
+    <GlassCard isHoverable variant="bordered">
+      <Card.Body as={Center}>
+        <Text as={FaGithub} size="$7xl" />
+        <Text h2>Github</Text>
+        <Link href={links.github} target="_blank">
+          <Code>{links.github}</Code>
+        </Link>
+      </Card.Body>
+    </GlassCard>
   );
 }
 
