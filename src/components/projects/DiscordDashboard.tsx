@@ -40,12 +40,12 @@ function Content() {
       </Text>
       <HStack>
         <Link href={links.botDashboardDemo} target="_blank">
-          <Button flat icon={<FaBoxOpen />} auto>
+          <Button flat icon={<FaBoxOpen />} auto size="lg">
             Demo
           </Button>
         </Link>
         <Link href={links.botDashboardGithub} target="_blank">
-          <Button flat color="secondary" icon={<FaGithub />} auto>
+          <Button flat color="secondary" icon={<FaGithub />} auto size="lg">
             Github
           </Button>
         </Link>
