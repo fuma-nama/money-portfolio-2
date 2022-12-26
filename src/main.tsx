@@ -13,8 +13,8 @@ const lightTheme = createTheme({
   type: "light",
   theme: {
     colors: {
-      textBrand: "$accents8",
       textSecondary: "rgba(55,55,55, 0.7)",
+      glass: "rgba(255, 255, 255, 0.1)",
     },
   },
 });
@@ -23,21 +23,21 @@ const darkTheme = createTheme({
   type: "dark",
   theme: {
     colors: {
-      textBrand: "$accents8",
       textSecondary: "$accents7",
+      glass: "rgba(255, 255, 255, 0.1)",
     },
   },
 });
 
 const Main = () => {
-  const [isDark, setIsDark] = useState(true);
+  const defaultTheme = "dark";
+  const [isDark, setIsDark] = useState(() => {
+    const current = window.localStorage.getItem("data-theme") as Theme;
+    const theme = current == null ? defaultTheme : current;
+    return theme === "dark";
+  });
 
   useEffect(() => {
-    const theme = window.localStorage.getItem("data-theme") as Theme;
-    if (theme != null) {
-      setIsDark(theme === "dark");
-    }
-
     const observer = new MutationObserver(() => {
       const newTheme = getDocumentTheme(document?.documentElement);
       setIsDark(newTheme === "dark");

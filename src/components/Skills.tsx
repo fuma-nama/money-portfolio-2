@@ -76,7 +76,7 @@ function SkillItem({ skill }: { skill: Skill }) {
       css={{
         h: "100%",
         shadow: "$lg",
-        background: "rgba(255, 255, 255, 0.1)",
+        background: "$glass",
         backdropFilter: "blur(8px)",
       }}
     >
@@ -97,7 +97,7 @@ function SkillItem({ skill }: { skill: Skill }) {
           pt: 0,
         }}
       >
-        <Text color="$textBrand">{skill.description}</Text>
+        <Text color="$accents8">{skill.description}</Text>
       </Card.Body>
     </Card>
   );

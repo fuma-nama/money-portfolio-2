@@ -1,4 +1,4 @@
-import { Navbar, Button, Link, Text, Switch } from "@nextui-org/react";
+import { Navbar, Button, Text, Switch } from "@nextui-org/react";
 import { BsGithub } from "react-icons/bs";
 import { useColorMode } from "../utils/theme";
 import { FiPhoneCall } from "react-icons/fi";

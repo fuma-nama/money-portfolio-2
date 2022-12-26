@@ -1,32 +1,24 @@
-import {
-  Button,
-  Container,
-  Grid,
-  Image,
-  Pagination,
-  Row,
-  Text,
-  Tooltip,
-} from "@nextui-org/react";
-import Me from "../assets/me.jpg";
+import { Button, Grid, Row, Text } from "@nextui-org/react";
 import Gradient from "../assets/banner-gradient.svg";
 import { BsGithub } from "react-icons/bs";
 import { Box } from "./Box";
+import { PhotoPanel } from "./PhotoPanel";
+import { Img } from "./Img";
 
 export function Banner() {
   return (
     <Box
       css={{
         position: "relative",
-        mb: "$10",
-        "@lg": {
-          mb: 0,
+        my: "$20",
+        "@md": {
+          my: 0,
         },
       }}
     >
-      <Image
+      <Img
         src={Gradient}
-        containerCss={{
+        css={{
           position: "absolute",
           top: 0,
           left: 0,
@@ -34,7 +26,7 @@ export function Banner() {
           maxW: "1000px",
         }}
       />
-      <Grid.Container gap={3}>
+      <Grid.Container gap={3} css={{ position: "relative" }}>
         <Grid md={6} css={{ p: 0 }}>
           <Box
             css={{
@@ -42,10 +34,7 @@ export function Banner() {
               p: 0,
               mt: "$xl",
               "@md": {
-                mt: "$3xl",
-              },
-              "@lg": {
-                mt: "$4xl",
+                my: "auto",
               },
             }}
           >
@@ -57,42 +46,6 @@ export function Banner() {
         </Grid>
       </Grid.Container>
     </Box>
-  );
-}
-
-function PhotoPanel() {
-  return (
-    <Container
-      display="flex"
-      alignItems="center"
-      justify="center"
-      direction="column"
-      fluid
-      css={{
-        position: "relative",
-        w: "100%",
-        mt: "$xl",
-        h: "$8xl",
-      }}
-    >
-      <Image
-        src={Me}
-        css={{
-          borderRadius: "$md",
-          w: "250px",
-        }}
-      />
-      <Tooltip
-        content="Nice to meet you!"
-        rounded
-        color="primary"
-        triggerCss={{ position: "absolute", bottom: "$3xl", left: "$2xl" }}
-      >
-        <Button flat size="lg">
-          Hello World
-        </Button>
-      </Tooltip>
-    </Container>
   );
 }
 

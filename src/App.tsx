@@ -1,7 +1,8 @@
 import { AppNavbar } from "./components/AppNavbar";
-import { Card, Container } from "@nextui-org/react";
-import { Banner } from "./components/Banner";
+import { Container } from "@nextui-org/react";
+import { Banner } from "./components/Hero";
 import { Skills } from "./components/Skills";
+import { Projects } from "./components/Projects";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Container lg>
         <Banner />
         <Skills />
+        <Projects />
       </Container>
     </>
   );
