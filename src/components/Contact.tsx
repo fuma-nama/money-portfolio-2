@@ -6,42 +6,44 @@ import { Box, Center, GlassCard, Grid } from "./Box";
 
 export function Contact() {
   return (
-    <Box
-      className={darkTheme.className}
-      css={{
-        mt: "$3xl",
-        position: "relative",
-        borderTopLeftRadius: "$md",
-        borderTopRightRadius: "$md",
-        gridTemplateColumns: "1fr",
-        background: "$background",
-        pt: "$xl",
-        pb: "$xl",
-        "@sm": {
-          pb: "$3xl",
-        },
-      }}
-    >
-      <BottomLight />
-      <Container lg css={{ position: "relative" }}>
-        <Grid
-          css={{
-            gap: "$xl",
-            "@xs": {
-              p: "$md",
-            },
-            "@sm": {
-              p: "$xl",
-              gap: "0px",
-              gridTemplateColumns: "1fr 1fr",
-            },
-          }}
-        >
-          <Content />
-          <Github />
-        </Grid>
-      </Container>
-    </Box>
+    <section id="contact">
+      <Box
+        className={darkTheme.className}
+        css={{
+          mt: "$3xl",
+          position: "relative",
+          borderTopLeftRadius: "$md",
+          borderTopRightRadius: "$md",
+          gridTemplateColumns: "1fr",
+          background: "$background",
+          pt: "$xl",
+          pb: "$xl",
+          "@sm": {
+            pb: "$3xl",
+          },
+        }}
+      >
+        <BottomLight />
+        <Container lg css={{ position: "relative" }}>
+          <Grid
+            css={{
+              gap: "$xl",
+              "@xs": {
+                p: "$md",
+              },
+              "@sm": {
+                p: "$xl",
+                gap: "0px",
+                gridTemplateColumns: "1fr 1fr",
+              },
+            }}
+          >
+            <Content />
+            <Github />
+          </Grid>
+        </Container>
+      </Box>
+    </section>
   );
 }
 

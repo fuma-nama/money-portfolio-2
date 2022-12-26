@@ -1,7 +1,8 @@
-import { Navbar, Button, Text, Switch } from "@nextui-org/react";
+import { Navbar, Button, Text, Switch, Link } from "@nextui-org/react";
 import { BsGithub } from "react-icons/bs";
 import { useColorMode } from "../utils/theme";
 import { FiPhoneCall } from "react-icons/fi";
+import { links } from "../links";
 
 export function AppNavbar() {
   const { isDark, setTheme } = useColorMode();
@@ -13,12 +14,12 @@ export function AppNavbar() {
         </Text>
       </Navbar.Brand>
       <Navbar.Content>
-        <Navbar.Item hideIn="xs">
+        <Navbar.Item hideIn="xs" as={Link} href={links.github} target="_blank">
           <Button auto flat icon={<BsGithub />} color="secondary">
             Github
           </Button>
         </Navbar.Item>
-        <Navbar.Item hideIn="xs">
+        <Navbar.Item hideIn="xs" as={Link} href="#contact">
           <Button auto flat color="secondary" icon={<FiPhoneCall />}>
             Contact
           </Button>
