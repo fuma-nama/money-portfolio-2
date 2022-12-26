@@ -135,11 +135,14 @@ function Preview() {
         src={OmagizeMobile}
         css={{
           position: "absolute",
-          bottom: "-$2xl",
+          bottom: "-$xl",
           right: "10%",
           borderRadius: "$md",
           shadow: "0 12px 20px 6px rgb(0 0 0 / 50%)",
           w: "20%",
+          "@sm": {
+            bottom: "-$2xl",
+          },
         }}
       />
     </Box>
@@ -154,10 +157,14 @@ function TechStack() {
       css={{
         "@xs": {
           w: "fit-content",
-          minWidth: "$8xl",
+          minWidth: "$5xl",
           position: "absolute",
-          bottom: "-$2xl",
+          bottom: "-$3xl",
           animation: `${updown} 6s infinite`,
+        },
+        "@sm": {
+          minWidth: "$8xl",
+          bottom: "-$2xl",
         },
       }}
     >
