@@ -1,4 +1,4 @@
-import { Button, Card, Grid, Row, Text } from "@nextui-org/react";
+import { Button, Card, Text } from "@nextui-org/react";
 import { Box, Flex, HStack } from "../Box";
 import BotDashboardEn from "@assets/bot-dashboard-en.png";
 import BotDashboardCn from "@assets/bot-dashboard-cn.png";
@@ -7,10 +7,26 @@ import { Img } from "../Img";
 import { FaGithub } from "react-icons/fa";
 import { Grid as FGrid } from "../Box";
 import { LightDarkTheme } from "./LightDarkTheme";
+import ChatAppGradient from "@assets/chat-app-gradient.svg";
 
 export function DiscordDashboard() {
   return (
-    <Box>
+    <Box css={{ position: "relative", mt: "$5xl" }}>
+      <Img
+        src={ChatAppGradient}
+        css={{ position: "absolute", top: 0, left: "-8rem" }}
+      />
+      <Box css={{ position: "relative" }}>
+        <Content />
+      </Box>
+      <LightDarkTheme />
+    </Box>
+  );
+}
+
+function Content() {
+  return (
+    <>
       <Text h1>
         A{" "}
         <Text span css={{ textGradient: "0deg, rgb(246, 159, 39) , $pink600" }}>
@@ -41,14 +57,13 @@ export function DiscordDashboard() {
         </Flex>
         <Preview />
       </Box>
-      <LightDarkTheme />
-    </Box>
+    </>
   );
 }
 
 function Preview() {
   return (
-    <Box css={{ mt: "$lg" }}>
+    <Box css={{ mt: "$lg", "@sm": { p: "$xl" } }}>
       <Flex>
         <Img
           src={BotDashboardEn}
@@ -69,8 +84,9 @@ function Preview() {
         css={{
           background: "$glass",
           backdropFilter: "blur(8px)",
-          my: "$md",
+          my: "$xl",
           "@sm": {
+            my: "$2xl",
             p: "$md",
           },
         }}

@@ -4,14 +4,35 @@ import BotDashboardLight from "@assets/bot-dashboard-light.png";
 import { Img } from "../Img";
 import { Grid as FGrid } from "../Box";
 import { useColorMode } from "../../utils/theme";
+import ThemeGradient from "@assets/theme-gradient.svg";
 
 export function LightDarkTheme() {
+  const { isDark } = useColorMode();
+
+  return (
+    <Box
+      css={{
+        position: "relative",
+        mt: "$3xl",
+      }}
+    >
+      <Img
+        src={ThemeGradient}
+        css={{ position: "absolute", top: isDark ? 0 : "-$6xl", left: 0 }}
+      />
+      <Content />
+    </Box>
+  );
+}
+
+function Content() {
   const { isDark, setTheme } = useColorMode();
+
   return (
     <FGrid
       css={{
+        position: "relative",
         gridTemplateColumns: "1fr",
-        mt: "$3xl",
         "@sm": {
           gridTemplateColumns: "1fr 1fr",
         },

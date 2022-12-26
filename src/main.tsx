@@ -9,7 +9,7 @@ import {
 import "./index.css";
 import { Theme } from "./utils/theme";
 
-const lightTheme = createTheme({
+export const lightTheme = createTheme({
   type: "light",
   theme: {
     colors: {
@@ -19,7 +19,7 @@ const lightTheme = createTheme({
   },
 });
 
-const darkTheme = createTheme({
+export const darkTheme = createTheme({
   type: "dark",
   theme: {
     colors: {
