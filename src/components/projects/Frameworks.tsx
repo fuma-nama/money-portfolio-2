@@ -13,8 +13,9 @@ export function Frameworks() {
         position: "relative",
         mt: "$4xl",
         gap: 0,
-        pb: "$6xl",
+        pb: "$3xl",
         "@sm": {
+          pb: "$6xl",
           alignItems: "center",
         },
       }}
