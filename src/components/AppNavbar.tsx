@@ -26,7 +26,7 @@ export function AppNavbar() {
           <Button 
             auto 
             light 
-            ces={{color: "$accents8"}}
+            css={{color: "$accents8"}}
             icon={<FaGithub />}
            />
         </Navbar.Item>
@@ -34,7 +34,7 @@ export function AppNavbar() {
           <Button
             auto
             light
-            ces={{color: "$accents8"}}
+            css={{color: "$accents8"}}
             onClick={() => setTheme(isDark ? "light" : "dark")}
             icon={isDark ? <BsMoonFill /> : <BsSunFill />}
           />
