@@ -12,7 +12,7 @@ import { links } from "../../links";
 
 export function DiscordDashboard() {
   return (
-    <Box css={{ position: "relative", mt: "$2xl", '@sm': { mt: "$5xl" }}>
+    <Box css={{ position: "relative", mt: "$2xl", '@sm': { mt: "$5xl" }}}>
       <Img
         src={ChatAppGradient}
         css={{ position: "absolute", top: 0, left: "-8rem" }}
