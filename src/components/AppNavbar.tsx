@@ -18,18 +18,23 @@ export function AppNavbar() {
       </Navbar.Brand>
       <Navbar.Content gap="$sm">
         <Navbar.Item hideIn="xs" as={Link} href="#contact">
-          <Button auto flat color="secondary" icon={<FiPhoneCall />}>
+          <Button auto light color="secondary" icon={<FiPhoneCall />}>
             Contact
           </Button>
         </Navbar.Item>
         <Navbar.Item hideIn="xs" as={Link} href={links.github} target="_blank">
-          <Button auto flat icon={<FaGithub />} color="secondary" />
+          <Button 
+            auto 
+            light 
+            css={{color: "$accents8"}}
+            icon={<FaGithub />}
+           />
         </Navbar.Item>
         <Navbar.Item>
           <Button
             auto
-            flat
-            color="secondary"
+            light
+            css={{color: "$accents8"}}
             onClick={() => setTheme(isDark ? "light" : "dark")}
             icon={isDark ? <BsMoonFill /> : <BsSunFill />}
           />
