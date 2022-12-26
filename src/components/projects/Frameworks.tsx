@@ -2,10 +2,36 @@ import { Button, Card, Grid, Text } from "@nextui-org/react";
 import { BsMenuButtonFill } from "react-icons/bs";
 import { FaDiscord } from "react-icons/fa";
 import { Box, Center, Flex, GlassCard, HStack } from "../Box";
+import FrameworksBg from "@assets/frameworks-bg.svg";
+import { Img } from "../Img";
 
 export function Frameworks() {
   return (
-    <Flex css={{ mt: "$4xl", alignItems: "center", gap: 0 }}>
+    <Flex
+      css={{
+        position: "relative",
+        mt: "$4xl",
+        gap: 0,
+        pb: "$6xl",
+        "@sm": {
+          alignItems: "center",
+        },
+      }}
+    >
+      <Img
+        css={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          w: "100%",
+          minHeight: "500px",
+          opacity: 0.5,
+          maskImage:
+            "linear-gradient(to right, transparent 0%, white 20%, white 80%, transparent 90%)",
+          objectFit: "cover",
+        }}
+        src={FrameworksBg}
+      />
       <Text h1>
         Not just{" "}
         <Text span css={{ textGradient: "0deg, $yellow600, $red500" }}>
@@ -71,12 +97,15 @@ function Projects() {
         </Grid>
       ))}
       <Grid sm css={{ w: "100%" }}>
-        <GlassCard variant="bordered" css={{ h: "100%" }}>
+        <GlassCard
+          variant="bordered"
+          css={{ h: "100%", backdropFilter: "blur(16px)" }}
+        >
           <Card.Header as={Text} h3>
             More
           </Card.Header>
           <Card.Body as={Center} css={{ pt: 0 }}>
-            <Text color="$textSecondary">Interested about Other Projects?</Text>
+            <Text color="$accents8">Interested about Other Projects?</Text>
           </Card.Body>
           <Card.Footer>
             <Button size="sm" flat css={{ w: "100%" }}>
