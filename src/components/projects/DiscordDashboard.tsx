@@ -12,7 +12,7 @@ import { links } from "../../links";
 
 export function DiscordDashboard() {
   return (
-    <Box css={{ position: "relative", mt: "$lg", '@xs': { mt: "$5xl" }}}>
+    <Box css={{ position: "relative", mt: "$md", '@xs': { mt: "$5xl" }}}>
       <Img
         src={ChatAppGradient}
         css={{ position: "absolute", top: 0, left: "-8rem" }}
@@ -29,14 +29,14 @@ function Content() {
   return (
     <>
       <Text h1>
-        A{" "}
+        Awesome {" "}
         <Text span css={{ textGradient: "0deg, rgb(246, 159, 39) , $pink600" }}>
-          Light & Powerful
+          Powerful
         </Text>{" "}
-        Dashboard & Templates
+        Dashboard Templates
       </Text>
       <Text h4 color="$textSecondary">
-        Flexible, Modern Style UI with Fast performance and Perfect UX
+        Flexible, Modern, Cutting Edge Dashboard with Fast performance and Perfect UX
       </Text>
       <HStack>
         <Link href={links.botDashboardDemo} target="_blank">
