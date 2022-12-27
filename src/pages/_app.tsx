@@ -1,15 +1,9 @@
-import { AppNavbar } from "../components/AppNavbar";
-import { Container, NextUIProvider } from "@nextui-org/react";
-import { Banner } from "../components/Hero";
-import { Skills } from "../components/Skills";
-import { Projects } from "../components/Projects";
-import { Contact } from "../components/Contact";
-import { Box } from "../components/Box";
-import "./index.css";
 import { darkTheme, lightTheme } from "../themes";
 import { ThemeProvider } from "next-themes";
+import { AppProps } from "next/dist/shared/lib/router/router";
+import { NextUIProvider } from "@nextui-org/react";
 
-function App() {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider
       defaultTheme="system"
@@ -20,17 +14,8 @@ function App() {
       }}
     >
       <NextUIProvider>
-        <AppNavbar />
-        <Box css={{ position: "relative", overflowX: "hidden" }}>
-          <Container lg css={{ position: "relative" }}>
-            <Banner />
-            <Projects />
-          </Container>
-          <Contact />
-        </Box>
+        <Component {...pageProps} />
       </NextUIProvider>
     </ThemeProvider>
   );
 }
-
-export default App;
