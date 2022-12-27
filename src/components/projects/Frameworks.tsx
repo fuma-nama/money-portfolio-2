@@ -7,7 +7,6 @@ import { links } from "../../links";
 import { useColorMode } from "../../utils/theme";
 
 export function Frameworks() {
-  const { isDark } = useColorMode();
   return (
     <Flex
       css={{
@@ -22,6 +21,33 @@ export function Frameworks() {
         },
       }}
     >
+      <Background />
+      <Text h1>
+        Not just{" "}
+        <Text span css={{ textGradient: "0deg, $yellow600, $red500" }}>
+          That
+        </Text>
+      </Text>
+      <Text h1>
+        <Text span css={{ textGradient: "0deg, $green400, $green600" }}>
+          More than
+        </Text>{" "}
+        That
+      </Text>
+
+      <Text h3 color="$textSecondary">
+        Light, Flexible, Fast Frameworks which provides high-quality code
+      </Text>
+      <Projects />
+    </Flex>
+  );
+}
+
+function Background() {
+  const { isDark } = useColorMode();
+
+  return (
+    <>
       <Img
         src="/banner-gradient.svg"
         css={{
@@ -51,24 +77,7 @@ export function Frameworks() {
         }}
         src="/frameworks-bg.svg"
       />
-      <Text h1>
-        Not just{" "}
-        <Text span css={{ textGradient: "0deg, $yellow600, $red500" }}>
-          That
-        </Text>
-      </Text>
-      <Text h1>
-        <Text span css={{ textGradient: "0deg, $green400, $green600" }}>
-          More than
-        </Text>{" "}
-        That
-      </Text>
-
-      <Text h3 color="$textSecondary">
-        Light, Flexible, Fast Frameworks which provides high-quality code
-      </Text>
-      <Projects />
-    </Flex>
+    </>
   );
 }
 

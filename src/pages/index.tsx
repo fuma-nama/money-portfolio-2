@@ -8,6 +8,12 @@ export default function IndexPage() {
       <NextSeo
         title="Money's Portfolio"
         description="The Portfolio of a Full-Stack Engineer"
+        openGraph={{
+          url: "https://money-portfolio.vercel.app",
+          title: "Money's Portfolio",
+          description: "Modern Web Developer & Full Stack Engineer",
+          siteName: "Money Portfolio",
+        }}
       />
       <App />
     </>
