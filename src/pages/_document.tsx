@@ -15,7 +15,11 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>{CssBaseline.flush()}</Head>
+        <Head>
+           {CssBaseline.flush()}
+           <link rel="shortcut icon" href="/icon.svg" />
+           <title>Money Portfolio</title>
+        </Head>
         <body>
           <Main />
           <NextScript />
