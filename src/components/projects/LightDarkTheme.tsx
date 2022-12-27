@@ -1,14 +1,10 @@
 import { Button, Text } from "@nextui-org/react";
 import { Box } from "../Box";
-import BotDashboardLight from "@assets/bot-dashboard-light.png";
 import { Img } from "../Img";
 import { Grid as FGrid } from "../Box";
 import { useColorMode } from "../../utils/theme";
-import ThemeGradient from "@assets/theme-gradient.svg";
 
 export function LightDarkTheme() {
-  const { isDark } = useColorMode();
-
   return (
     <Box
       css={{
@@ -17,8 +13,16 @@ export function LightDarkTheme() {
       }}
     >
       <Img
-        src={ThemeGradient}
-        css={{ position: "absolute", top: isDark ? 0 : "-$6xl", left: 0 }}
+        src="/theme-gradient.svg"
+        css={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          minWidth: "800px",
+          "@sm": {
+            bottom: "-70%",
+          },
+        }}
       />
       <Content />
     </Box>
@@ -33,13 +37,14 @@ function Content() {
       css={{
         position: "relative",
         gridTemplateColumns: "1fr",
+        gap: "$xl",
         "@sm": {
           gridTemplateColumns: "1fr 1fr",
         },
       }}
     >
       <Img
-        src={BotDashboardLight}
+        src="/bot-dashboard-light.png"
         css={{
           borderRadius: "$md",
           shadow: "$md",

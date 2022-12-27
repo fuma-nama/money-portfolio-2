@@ -1,8 +1,9 @@
-import { Grid, Card, Text, Container } from "@nextui-org/react";
+import { Grid, Card, Text } from "@nextui-org/react";
 import { ReactElement } from "react";
 import { BsMenuApp, BsPenFill, BsServer } from "react-icons/bs";
 import { FaReact } from "react-icons/fa";
 import { Box } from "./Box";
+import { Img } from "./Img";
 
 type Skill = {
   name?: string;
@@ -13,7 +14,7 @@ type Skill = {
 const skills: Skill[] = [
   {
     name: "Web Developer",
-    description: "Modern Web Dev who wrote many dashboards",
+    description: "Modern Web Dev who created many cool websites",
     icon: (
       <Box
         as={FaReact}
@@ -59,7 +60,7 @@ const skills: Skill[] = [
 
 export function Skills() {
   return (
-    <Grid.Container gap={3} css={{ p: 0 }}>
+    <Grid.Container gap={3} css={{ p: 0, mt: "$2xl" }}>
       {skills.map((skill, i) => (
         <Grid key={i} xs={12} sm={4} md={3}>
           <SkillItem skill={skill} />

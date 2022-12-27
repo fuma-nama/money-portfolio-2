@@ -1,6 +1,4 @@
 import { Button, Card, Row, Text, Tooltip } from "@nextui-org/react";
-import OmagizeDesktop from "@assets/omagize-desktop.png";
-import OmagizeMobile from "@assets/omagize-mobile.png";
 import { Box } from "../Box";
 import { Img } from "../Img";
 import { useColorMode } from "../../utils/theme";
@@ -8,16 +6,32 @@ import { FaReact } from "react-icons/fa";
 import { SiChakraui, SiFramer, SiKotlin, SiPostgresql } from "react-icons/si";
 import { BsCheckCircleFill, BsEyeFill, BsFlower3 } from "react-icons/bs";
 import { As } from "@nextui-org/react/types/utils/system";
-import { updown } from "../transitions";
-import ChatAppGradient from "@assets/chat-app-gradient.svg";
+import { updown } from "../../lib/transitions";
 import { links } from "../../links";
 
 export function Omagize() {
+  const { isDark } = useColorMode();
   return (
-    <Box css={{ mb: "$4xl", position: "relative" }}>
+    <Box
+      css={{
+        mb: "$2xl",
+        "@xs": { mb: "$4xl" },
+        position: "relative",
+        zIndex: "$2",
+      }}
+    >
       <Img
-        src={ChatAppGradient}
-        css={{ position: "absolute", left: 0, top: 0 }}
+        src="/chat-app-gradient.svg"
+        css={{
+          position: "absolute",
+          top: 0,
+          left: "-30%",
+          "@xs": {
+            top: "-30%",
+          },
+          minWidth: "800px",
+          zIndex: "-$2",
+        }}
       />
       <Intro />
       <Box
@@ -27,6 +41,7 @@ export function Omagize() {
           flexDirection: "column",
           mt: "$10",
           gap: "20px",
+          maxWidth: "1300px",
         }}
       >
         <Preview />
@@ -125,14 +140,14 @@ function Preview() {
       }}
     >
       <Img
-        src={OmagizeDesktop}
+        src="/omagize-desktop.png"
         css={{
           borderRadius: "$md",
           shadow: "$xl",
         }}
       />
       <Img
-        src={OmagizeMobile}
+        src="/omagize-mobile.png"
         css={{
           position: "absolute",
           bottom: "-$xl",

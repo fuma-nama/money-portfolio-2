@@ -2,9 +2,9 @@ import { Button, Card, Grid, Text } from "@nextui-org/react";
 import { BsMenuButtonFill } from "react-icons/bs";
 import { FaDiscord } from "react-icons/fa";
 import { Center, Flex, GlassCard, HStack } from "../Box";
-import FrameworksBg from "@assets/frameworks-bg.svg";
 import { Img } from "../Img";
 import { links } from "../../links";
+import { useColorMode } from "../../utils/theme";
 
 export function Frameworks() {
   return (
@@ -14,26 +14,14 @@ export function Frameworks() {
         mt: "$4xl",
         gap: 0,
         pb: "$3xl",
+        zIndex: "$2",
         "@sm": {
           pb: "$6xl",
           alignItems: "center",
         },
       }}
     >
-      <Img
-        css={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          w: "100%",
-          minHeight: "500px",
-          opacity: 0.5,
-          maskImage:
-            "linear-gradient(to right, transparent 0%, white 20%, white 80%, transparent 90%)",
-          objectFit: "cover",
-        }}
-        src={FrameworksBg}
-      />
+      <Background />
       <Text h1>
         Not just{" "}
         <Text span css={{ textGradient: "0deg, $yellow600, $red500" }}>
@@ -52,6 +40,44 @@ export function Frameworks() {
       </Text>
       <Projects />
     </Flex>
+  );
+}
+
+function Background() {
+  const { isDark } = useColorMode();
+
+  return (
+    <>
+      <Img
+        src="/banner-gradient.svg"
+        css={{
+          position: "absolute",
+          top: "0",
+          left: 0,
+          minWidth: "1000px",
+          zIndex: "-$2",
+          opacity: isDark ? 0.7 : 0.3,
+          "@sm": {
+            top: "-50%",
+          },
+        }}
+      />
+      <Img
+        css={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          w: "100%",
+          minHeight: "500px",
+          opacity: 0.5,
+          maskImage:
+            "linear-gradient(to right, transparent 0%, white 20%, white 80%, transparent 90%)",
+          objectFit: "cover",
+          zIndex: "-$2",
+        }}
+        src="/frameworks-bg.svg"
+      />
+    </>
   );
 }
 

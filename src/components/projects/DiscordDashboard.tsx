@@ -1,31 +1,40 @@
 import { Button, Card, Link, Text } from "@nextui-org/react";
 import { Box, Flex, HStack } from "../Box";
-import BotDashboardEn from "@assets/bot-dashboard-en.png";
-import BotDashboardCn from "@assets/bot-dashboard-cn.png";
 import { SiGoland, SiKotlin, SiPostgresql } from "react-icons/si";
 import { Img } from "../Img";
 import { FaBoxOpen, FaGithub } from "react-icons/fa";
 import { Grid as FGrid } from "../Box";
-import { LightDarkTheme } from "./LightDarkTheme";
-import ChatAppGradient from "@assets/chat-app-gradient.svg";
 import { links } from "../../links";
+import { useColorMode } from "../../utils/theme";
 
 export function DiscordDashboard() {
+  const { isDark } = useColorMode();
   return (
-    <Box css={{ 
-           position: "relative", 
-           mt: "$sm",
-           '@xs': { mt: "$2xl" }, 
-           '@sm': { mt: "$5xl" }
-    }}>
+    <Box
+      css={{
+        position: "relative",
+        mt: "$3xl",
+        zIndex: "$2",
+        "@sm": { mt: "$5xl" },
+      }}
+    >
       <Img
-        src={ChatAppGradient}
-        css={{ position: "absolute", top: 0, left: "-8rem" }}
+        src="/dashboard-gradient.svg"
+        css={{
+          position: "absolute",
+          top: "0",
+          left: "-20%",
+          zIndex: "-$2",
+          minWidth: "700px",
+          "@sm": {
+            top: "-10%",
+            left: isDark ? "-30%" : "-20%",
+          },
+        }}
       />
       <Box css={{ position: "relative" }}>
         <Content />
       </Box>
-      <LightDarkTheme />
     </Box>
   );
 }
@@ -40,7 +49,8 @@ function Content() {
         Dashboard Templates
       </Text>
       <Text h4 color="$textSecondary">
-        Flexible, Modern, Cutting Edge Dashboard with Fast performance and Perfect UX
+        Flexible, Modern, Cutting Edge Dashboard with Fast performance and
+        Perfect UX
       </Text>
       <HStack>
         <Link href={links.botDashboardDemo} target="_blank">
@@ -81,11 +91,11 @@ function Preview() {
     <Box css={{ mt: "$lg", "@sm": { p: "$xl" } }}>
       <Flex>
         <Img
-          src={BotDashboardEn}
+          src="/bot-dashboard-en.png"
           css={{ borderRadius: "$md", shadow: "$md", ml: "5%" }}
         />
         <Img
-          src={BotDashboardCn}
+          src="/bot-dashboard-cn.png"
           css={{
             borderRadius: "$md",
             mt: "-50%",
