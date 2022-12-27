@@ -13,7 +13,7 @@ type Skill = {
 const skills: Skill[] = [
   {
     name: "Web Developer",
-    description: "Modern Web Dev who wrote many dashboards",
+    description: "Modern Web Dev who created many cool websites",
     icon: (
       <Box
         as={FaReact}
