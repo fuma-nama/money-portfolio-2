@@ -2,6 +2,7 @@ import { darkTheme, lightTheme } from "../themes";
 import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/dist/shared/lib/router/router";
 import { NextUIProvider } from "@nextui-org/react";
+import "./_app.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
