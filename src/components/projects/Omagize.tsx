@@ -1,7 +1,7 @@
 import { Button, Card, Row, Text, Tooltip } from "@nextui-org/react";
 import { Box } from "../Box";
 import { Img } from "../Img";
-import { useColorMode } from "../../utils/theme";
+import { useColorMode } from "../../lib/theme";
 import { FaReact } from "react-icons/fa";
 import { SiChakraui, SiFramer, SiKotlin, SiPostgresql } from "react-icons/si";
 import { BsCheckCircleFill, BsEyeFill, BsFlower3 } from "react-icons/bs";

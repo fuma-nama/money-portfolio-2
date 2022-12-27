@@ -4,7 +4,7 @@ import { FaDiscord } from "react-icons/fa";
 import { Center, Flex, GlassCard, HStack } from "../Box";
 import { Img } from "../Img";
 import { links } from "../../links";
-import { useColorMode } from "../../utils/theme";
+import { useColorMode } from "../../lib/theme";
 
 export function Frameworks() {
   return (

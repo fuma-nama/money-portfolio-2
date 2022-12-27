@@ -5,7 +5,7 @@ import { Img } from "../Img";
 import { FaBoxOpen, FaGithub } from "react-icons/fa";
 import { Grid as FGrid } from "../Box";
 import { links } from "../../links";
-import { useColorMode } from "../../utils/theme";
+import { useColorMode } from "../../lib/theme";
 
 export function DiscordDashboard() {
   const { isDark } = useColorMode();

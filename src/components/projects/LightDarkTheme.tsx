@@ -2,7 +2,7 @@ import { Button, Text } from "@nextui-org/react";
 import { Box } from "../Box";
 import { Img } from "../Img";
 import { Grid as FGrid } from "../Box";
-import { useColorMode } from "../../utils/theme";
+import { useColorMode } from "../../lib/theme";
 
 export function LightDarkTheme() {
   return (

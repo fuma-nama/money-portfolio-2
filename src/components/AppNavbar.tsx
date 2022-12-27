@@ -1,6 +1,6 @@
 import { Navbar, Button, Text, Link } from "@nextui-org/react";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
-import { useColorMode } from "../utils/theme";
+import { useColorMode } from "../lib/theme";
 import { FiPhoneCall } from "react-icons/fi";
 import { links } from "../links";
 import { GiSharkFin } from "react-icons/gi";
