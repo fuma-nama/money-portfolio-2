@@ -1,7 +1,7 @@
 import { Button, Card, Code, Container, Link, Text } from "@nextui-org/react";
 import { FaDiscord, FaGithub } from "react-icons/fa";
 import { links } from "../links";
-import { darkTheme } from "../main";
+import { darkTheme } from "../themes";
 import { Box, Center, GlassCard, Grid } from "./Box";
 
 export function Contact() {

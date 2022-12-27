@@ -7,8 +7,7 @@ import {
   Image,
   Text,
 } from "@nextui-org/react";
-import Me from "../assets/me.jpg";
-import { updown } from "./transitions";
+import { updown } from "../lib/transitions";
 import { links } from "../links";
 
 export function PhotoPanel() {
@@ -27,7 +26,7 @@ export function PhotoPanel() {
       }}
     >
       <Image
-        src={Me}
+        src="/me.jpg"
         css={{
           borderRadius: "$md",
           w: "250px",
@@ -38,7 +37,11 @@ export function PhotoPanel() {
         content="Nice to meet you!"
         rounded
         color="primary"
-        triggerCss={{ position: "absolute", bottom: "$3xl", left: "$2xl" }}
+        triggerCss={{
+          position: "absolute",
+          bottom: "$3xl",
+          left: "$2xl",
+        }}
       >
         <Button flat size="lg">
           Hello World
@@ -71,7 +74,7 @@ function Discord() {
           gap: "$3",
         }}
       >
-        <Avatar src={Me} />
+        <Avatar src="/me.jpg" />
         <Text b size="$lg">
           Money
         </Text>

@@ -2,7 +2,6 @@ import { Button, Card, Grid, Text } from "@nextui-org/react";
 import { BsMenuButtonFill } from "react-icons/bs";
 import { FaDiscord } from "react-icons/fa";
 import { Center, Flex, GlassCard, HStack } from "../Box";
-import FrameworksBg from "@assets/frameworks-bg.svg";
 import { Img } from "../Img";
 import { links } from "../../links";
 
@@ -32,7 +31,7 @@ export function Frameworks() {
             "linear-gradient(to right, transparent 0%, white 20%, white 80%, transparent 90%)",
           objectFit: "cover",
         }}
-        src={FrameworksBg}
+        src="/frameworks-bg.svg"
       />
       <Text h1>
         Not just{" "}
