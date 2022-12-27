@@ -4,8 +4,10 @@ import { FaDiscord } from "react-icons/fa";
 import { Center, Flex, GlassCard, HStack } from "../Box";
 import { Img } from "../Img";
 import { links } from "../../links";
+import { useColorMode } from "../../utils/theme";
 
 export function Frameworks() {
+  const { isDark } = useColorMode();
   return (
     <Flex
       css={{
@@ -28,7 +30,7 @@ export function Frameworks() {
           left: 0,
           minWidth: "1000px",
           zIndex: "-$2",
-          opacity: 0.6,
+          opacity: isDark ? 0.7 : 0.3,
           "@sm": {
             top: "-50%",
           },
