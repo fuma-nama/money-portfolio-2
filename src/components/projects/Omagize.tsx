@@ -10,11 +10,28 @@ import { updown } from "../../lib/transitions";
 import { links } from "../../links";
 
 export function Omagize() {
+  const { isDark } = useColorMode();
   return (
-    <Box css={{ mb: "$2xl", "@xs": { mb: "$4xl" }, position: "relative" }}>
+    <Box
+      css={{
+        mb: "$2xl",
+        "@xs": { mb: "$4xl" },
+        position: "relative",
+        zIndex: "$2",
+      }}
+    >
       <Img
         src="/chat-app-gradient.svg"
-        css={{ position: "absolute", left: 0, top: 0 }}
+        css={{
+          position: "absolute",
+          top: 0,
+          left: "-30%",
+          "@xs": {
+            top: "-30%",
+          },
+          minWidth: "800px",
+          zIndex: "-$2",
+        }}
       />
       <Intro />
       <Box
@@ -24,6 +41,7 @@ export function Omagize() {
           flexDirection: "column",
           mt: "$10",
           gap: "20px",
+          maxWidth: "1300px",
         }}
       >
         <Preview />

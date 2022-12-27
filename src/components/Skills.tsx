@@ -60,24 +60,9 @@ const skills: Skill[] = [
 
 export function Skills() {
   return (
-    <Grid.Container gap={3} css={{ p: 0, position: "relative" }}>
-      <Img
-        src="/banner-wave.svg"
-        css={{
-          position: "absolute",
-          bottom: "-50%",
-          left: 0,
-          minWidth: "1000px",
-          display: "none",
-          "@xs": {
-            display: "block",
-          },
-          maskImage:
-            "radial-gradient(circle at center, white, transparent 50%)",
-        }}
-      />
+    <Grid.Container gap={3} css={{ p: 0, mt: "$2xl" }}>
       {skills.map((skill, i) => (
-        <Grid key={i} xs={12} sm={4} md={3} css={{ position: "relative" }}>
+        <Grid key={i} xs={12} sm={4} md={3}>
           <SkillItem skill={skill} />
         </Grid>
       ))}

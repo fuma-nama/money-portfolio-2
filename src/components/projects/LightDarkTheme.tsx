@@ -5,8 +5,6 @@ import { Grid as FGrid } from "../Box";
 import { useColorMode } from "../../utils/theme";
 
 export function LightDarkTheme() {
-  const { isDark } = useColorMode();
-
   return (
     <Box
       css={{
@@ -16,7 +14,15 @@ export function LightDarkTheme() {
     >
       <Img
         src="/theme-gradient.svg"
-        css={{ position: "absolute", top: isDark ? 0 : "-$6xl", left: 0 }}
+        css={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          minWidth: "800px",
+          "@sm": {
+            bottom: "-70%",
+          },
+        }}
       />
       <Content />
     </Box>
@@ -31,6 +37,7 @@ function Content() {
       css={{
         position: "relative",
         gridTemplateColumns: "1fr",
+        gap: "$xl",
         "@sm": {
           gridTemplateColumns: "1fr 1fr",
         },

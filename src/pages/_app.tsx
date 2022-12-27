@@ -21,10 +21,9 @@ function App() {
     >
       <NextUIProvider>
         <AppNavbar />
-        <Box css={{ position: "relative" }}>
-          <Container lg css={{ position: "relative", overflowX: "hidden" }}>
+        <Box css={{ position: "relative", overflowX: "hidden" }}>
+          <Container lg css={{ position: "relative" }}>
             <Banner />
-            <Skills />
             <Projects />
           </Container>
           <Contact />

@@ -4,26 +4,37 @@ import { SiGoland, SiKotlin, SiPostgresql } from "react-icons/si";
 import { Img } from "../Img";
 import { FaBoxOpen, FaGithub } from "react-icons/fa";
 import { Grid as FGrid } from "../Box";
-import { LightDarkTheme } from "./LightDarkTheme";
 import { links } from "../../links";
+import { useColorMode } from "../../utils/theme";
 
 export function DiscordDashboard() {
+  const { isDark } = useColorMode();
   return (
     <Box
       css={{
         position: "relative",
         mt: "$3xl",
+        zIndex: "$2",
         "@sm": { mt: "$5xl" },
       }}
     >
       <Img
-        src="/chat-app-gradient.svg"
-        css={{ position: "absolute", top: 0, left: "-8rem" }}
+        src="/dashboard-gradient.svg"
+        css={{
+          position: "absolute",
+          top: "0",
+          left: "-20%",
+          zIndex: "-$2",
+          minWidth: "700px",
+          "@lg": {
+            top: "-10%",
+            left: isDark ? "-30%" : "-20%",
+          },
+        }}
       />
       <Box css={{ position: "relative" }}>
         <Content />
       </Box>
-      <LightDarkTheme />
     </Box>
   );
 }

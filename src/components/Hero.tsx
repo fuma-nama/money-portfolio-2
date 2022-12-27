@@ -4,6 +4,7 @@ import { Box } from "./Box";
 import { PhotoPanel } from "./PhotoPanel";
 import { Img } from "./Img";
 import { links } from "../links";
+import { Skills } from "./Skills";
 
 export function Banner() {
   return (
@@ -16,16 +17,7 @@ export function Banner() {
         },
       }}
     >
-      <Img
-        src="/banner-gradient.svg"
-        css={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          w: "100%",
-          maxW: "1000px",
-        }}
-      />
+      <Background />
       <Grid.Container gap={3} css={{ position: "relative" }}>
         <Grid md={6} css={{ p: 0 }}>
           <Box
@@ -45,7 +37,38 @@ export function Banner() {
           <PhotoPanel />
         </Grid>
       </Grid.Container>
+      <Skills />
     </Box>
+  );
+}
+
+function Background() {
+  return (
+    <>
+      <Img
+        src="/banner-gradient.svg"
+        css={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          w: "100%",
+          maxW: "800px",
+          display: "none",
+          "@md": { display: "block" },
+        }}
+      />
+      <Img
+        src="/banner-wave.svg"
+        css={{
+          position: "absolute",
+          bottom: "0",
+          left: 0,
+          w: "100%",
+          maskImage:
+            "radial-gradient(circle at center, white, transparent 50%)",
+        }}
+      />
+    </>
   );
 }
 
