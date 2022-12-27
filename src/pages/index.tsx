@@ -23,11 +23,19 @@ export default function IndexPage() {
           cardType: "app",
         }}
         openGraph={{
+          type: "website",
           url: "https://money-portfolio.vercel.app",
-          title: "Money's Portfolio",
-          description: "Modern Web Developer & Full Stack Engineer",
-          siteName: "Money Portfolio",
-          images: [{ url: "https://money-portfolio.vercel.app/me.jpg" }],
+          title: "Hi! I am Money",
+          description: "A Modern Web Developer & Full Stack Engineer",
+          siteName: "Money's Portfolio",
+          images: [
+            {
+              url: "https://money-portfolio.vercel.app/me.jpg",
+              width: 800,
+              height: 600,
+              alt: "My Photo",
+            },
+          ],
           profile: {
             username: "Money Shark",
             firstName: "Money",
