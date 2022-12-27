@@ -66,9 +66,13 @@ export function Skills() {
         src={Wave}
         css={{
           position: "absolute",
-          top: "-50%",
+          bottom: "-50%",
           left: 0,
           minWidth: "1000px",
+          display: "none",
+          "@xs": {
+            display: "block",
+          },
           maskImage:
             "radial-gradient(circle at center, white, transparent 50%)",
         }}
