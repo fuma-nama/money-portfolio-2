@@ -13,12 +13,27 @@ export function Frameworks() {
         mt: "$4xl",
         gap: 0,
         pb: "$3xl",
+        zIndex: "$2",
         "@sm": {
           pb: "$6xl",
           alignItems: "center",
         },
       }}
     >
+      <Img
+        src="/banner-gradient.svg"
+        css={{
+          position: "absolute",
+          top: "0",
+          left: 0,
+          minWidth: "1000px",
+          zIndex: "-$2",
+          opacity: 0.6,
+          "@sm": {
+            top: "-50%",
+          },
+        }}
+      />
       <Img
         css={{
           position: "absolute",
@@ -30,6 +45,7 @@ export function Frameworks() {
           maskImage:
             "linear-gradient(to right, transparent 0%, white 20%, white 80%, transparent 90%)",
           objectFit: "cover",
+          zIndex: "-$2",
         }}
         src="/frameworks-bg.svg"
       />

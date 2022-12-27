@@ -50,11 +50,17 @@ function Background() {
         css={{
           position: "absolute",
           top: 0,
-          right: 0,
-          w: "100%",
-          maxW: "800px",
-          display: "none",
-          "@md": { display: "block" },
+          left: 0,
+          minWidth: "800px",
+          maxHeight: "1000px",
+          "@xs": {
+            top: "-20%",
+          },
+          "@md": {
+            top: 0,
+            right: 0,
+            left: "initial",
+          },
         }}
       />
       <Img

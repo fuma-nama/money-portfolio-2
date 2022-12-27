@@ -26,7 +26,7 @@ export function DiscordDashboard() {
           left: "-20%",
           zIndex: "-$2",
           minWidth: "700px",
-          "@lg": {
+          "@sm": {
             top: "-10%",
             left: isDark ? "-30%" : "-20%",
           },
