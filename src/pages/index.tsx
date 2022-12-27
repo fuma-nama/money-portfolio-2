@@ -12,18 +12,28 @@ export default function IndexPage() {
   return (
     <>
       <Head>
-        <title>Money Portfolio</title>
         <link rel="icon" type="image/svg+xml" href="/icon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <NextSeo
         title="Money's Portfolio"
         description="The Portfolio of a Full-Stack Engineer"
+        themeColor="#FF30b0"
+        twitter={{
+          cardType: "app",
+        }}
         openGraph={{
           url: "https://money-portfolio.vercel.app",
           title: "Money's Portfolio",
           description: "Modern Web Developer & Full Stack Engineer",
           siteName: "Money Portfolio",
+          images: [{ url: "https://money-portfolio.vercel.app/me.jpg" }],
+          profile: {
+            username: "Money Shark",
+            firstName: "Money",
+            lastName: "SonMooSans",
+            gender: "Boy",
+          },
         }}
       />
       <AppNavbar />
