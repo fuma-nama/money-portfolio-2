@@ -1,4 +1,4 @@
-import { Button, Grid, Link, Row, Text } from "@nextui-org/react";
+import { Button, Grid, Text } from "@nextui-org/react";
 import Gradient from "../assets/banner-gradient.svg";
 import { BsGithub } from "react-icons/bs";
 import { Box } from "./Box";
