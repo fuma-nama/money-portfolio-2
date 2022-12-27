@@ -1,5 +1,5 @@
-import { Navbar, Button, Text, Switch, Link } from "@nextui-org/react";
-import { BsGithub, BsMoonFill, BsSunFill } from "react-icons/bs";
+import { Navbar, Button, Text, Link } from "@nextui-org/react";
+import { BsMoonFill, BsSunFill } from "react-icons/bs";
 import { useColorMode } from "../utils/theme";
 import { FiPhoneCall } from "react-icons/fi";
 import { links } from "../links";
@@ -8,6 +8,7 @@ import { FaGithub } from "react-icons/fa";
 
 export function AppNavbar() {
   const { isDark, setTheme } = useColorMode();
+
   return (
     <Navbar isBordered variant="sticky" css={{ zIndex: "$10" }}>
       <Navbar.Brand css={{ gap: "$3" }}>

@@ -3,7 +3,6 @@ import { ReactElement } from "react";
 import { BsMenuApp, BsPenFill, BsServer } from "react-icons/bs";
 import { FaReact } from "react-icons/fa";
 import { Box } from "./Box";
-import Wave from "@assets/banner-wave.svg";
 import { Img } from "./Img";
 
 type Skill = {
@@ -63,7 +62,7 @@ export function Skills() {
   return (
     <Grid.Container gap={3} css={{ p: 0, position: "relative" }}>
       <Img
-        src={Wave}
+        src="/banner-wave.svg"
         css={{
           position: "absolute",
           bottom: "-50%",
