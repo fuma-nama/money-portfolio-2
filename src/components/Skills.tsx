@@ -1,8 +1,10 @@
-import { Grid, Card, Text, Container } from "@nextui-org/react";
+import { Grid, Card, Text } from "@nextui-org/react";
 import { ReactElement } from "react";
 import { BsMenuApp, BsPenFill, BsServer } from "react-icons/bs";
 import { FaReact } from "react-icons/fa";
 import { Box } from "./Box";
+import Wave from "@assets/banner-wave.svg";
+import { Img } from "./Img";
 
 type Skill = {
   name?: string;
@@ -59,9 +61,20 @@ const skills: Skill[] = [
 
 export function Skills() {
   return (
-    <Grid.Container gap={3} css={{ p: 0 }}>
+    <Grid.Container gap={3} css={{ p: 0, position: "relative" }}>
+      <Img
+        src={Wave}
+        css={{
+          position: "absolute",
+          top: "-50%",
+          left: 0,
+          minWidth: "1000px",
+          maskImage:
+            "radial-gradient(circle at center, white, transparent 50%)",
+        }}
+      />
       {skills.map((skill, i) => (
-        <Grid key={i} xs={12} sm={4} md={3}>
+        <Grid key={i} xs={12} sm={4} md={3} css={{ position: "relative" }}>
           <SkillItem skill={skill} />
         </Grid>
       ))}

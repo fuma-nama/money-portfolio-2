@@ -14,7 +14,7 @@ import { links } from "../../links";
 
 export function Omagize() {
   return (
-    <Box css={{ mb: "$4xl", position: "relative" }}>
+    <Box css={{ mb: "$2xl", "@xs": { mb: "$4xl" }, position: "relative" }}>
       <Img
         src={ChatAppGradient}
         css={{ position: "absolute", left: 0, top: 0 }}

@@ -11,7 +11,7 @@ export function AppNavbar() {
   return (
     <Navbar isBordered variant="sticky" css={{ zIndex: "$10" }}>
       <Navbar.Brand css={{ gap: "$3" }}>
-        <Text as={GiSharkFin} />
+        <GiSharkFin />
         <Text b size="$lg">
           Money
         </Text>
@@ -23,18 +23,13 @@ export function AppNavbar() {
           </Button>
         </Navbar.Item>
         <Navbar.Item hideIn="xs" as={Link} href={links.github} target="_blank">
-          <Button 
-            auto 
-            light 
-            css={{color: "$accents8"}}
-            icon={<FaGithub />}
-           />
+          <Button auto light css={{ color: "$accents8" }} icon={<FaGithub />} />
         </Navbar.Item>
         <Navbar.Item>
           <Button
             auto
             light
-            css={{color: "$accents8"}}
+            css={{ color: "$accents8" }}
             onClick={() => setTheme(isDark ? "light" : "dark")}
             icon={isDark ? <BsMoonFill /> : <BsSunFill />}
           />
